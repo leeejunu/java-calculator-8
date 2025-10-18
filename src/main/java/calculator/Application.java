@@ -4,14 +4,16 @@ public class Application {
 
     public static void main(String[] args) {
         // TODO: 프로그램 구현
-        String input = InputView.input();
-        String[] stringNumArr = Parser.splitStringNum(input);
+        try {
+            String input = InputView.input();
+            String[] stringNumArr = Parser.splitStringNum(input);
 
-        Calculator calc = new Calculator();
-        Long result = calc.add(stringNumArr);
+            Calculator calc = new Calculator();
+            Long result = calc.add(stringNumArr);
 
-        OutputView.print(result);
-
-
+            OutputView.print(result);
+        } catch (IllegalArgumentException e) {
+            OutputView.printErrorMessage(e.getMessage());
+        }
     }
 }

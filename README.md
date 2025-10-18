@@ -7,7 +7,7 @@
 - [X] 문자열 앞부분의 "//"와 "\n"사이에 위치하는 문자(커스텀 구분자)를 기준으로 분리한 각 숫자의 합을 반환한다. 
 
 ## 예외 처리
-- [ ] 음수 입력시 IllegalArgumentException 발생시킨다.
+- [X] 음수 입력시 IllegalArgumentException 발생시킨다.
 - [ ] 기본 구분자외에 문자(숫자 제외) 포함시 IllegalArgumentException 발생시킨다.
 - [ ] 커스텀 구분자가 한글자가 아닌 경우 IllegalArgumentException 발생시킨다.
 - [ ] 커스텀 구분자외에 문자(숫자 제외) 포함시 IllegalArgumentException 발생시킨다.
