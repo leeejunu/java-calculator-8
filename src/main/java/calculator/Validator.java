@@ -24,5 +24,9 @@ public class Validator {
         if (delimiter.length() != 1) {
             throw new IllegalArgumentException("구분자는 한 글자만 입력할 수 있습니다.");
         }
+
+        if (Pattern.matches("[0-9]", delimiter)) {
+            throw new IllegalArgumentException("숫자를 구분자로 할 수 없습니다.");
+        }
     }
 }
