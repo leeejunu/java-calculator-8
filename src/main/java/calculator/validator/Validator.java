@@ -14,8 +14,12 @@ public class Validator {
     public static void validateInput(String inputValue, Set<String> delimiters) {
         for (char c : inputValue.toCharArray()) {
             String regex = Pattern.quote(String.valueOf(c));
+            if (Character.isDigit(c) && Long.parseLong(String.valueOf(c)) == 0) {
+                throw new IllegalArgumentException("0은 입력할 수 없습니다.");
+            }
+
             if (!Character.isDigit(c) && !delimiters.contains(regex)) {
-                throw new IllegalArgumentException("구분자 외의 문자를 사용하셨습니다. 잘못된 문자 = " + c);
+                throw new IllegalArgumentException("구분자와 양수만 입력할 수 있습니다. 잘못된 문자 = " + c);
             }
         }
     }
