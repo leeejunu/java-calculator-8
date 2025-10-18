@@ -2,6 +2,7 @@ package calculator.validator;
 
 import java.util.Set;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class Validator {
 
@@ -11,7 +12,21 @@ public class Validator {
         }
     }
 
-    public static void validateInput(String inputValue, Set<String> delimiters) {
+    public static void validateInputValue(String inputValue, Set<String> delimiters) {
+
+        String regex = delimiters
+                .stream()
+                .map(Pattern::quote)
+                .collect(Collectors.joining("|"));
+
+        if (inputValue.matches("^(" + regex + ").*") || inputValue.matches(".*(" + regex + ")$")) {
+            throw new IllegalArgumentException("구분자로 시작하거나 끝날 수 없습니다.");
+        }
+
+        if (inputValue.matches(".*(" + regex + "){2,}.*")) {
+            throw new IllegalArgumentException("구분자가 연속으로 나올 수 없습니다.");
+        }
+
         for (char c : inputValue.toCharArray()) {
             String currentChar = String.valueOf(c);
             if (Character.isDigit(c) && Long.parseLong(currentChar) == 0) {

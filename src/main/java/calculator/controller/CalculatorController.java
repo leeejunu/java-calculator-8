@@ -2,6 +2,8 @@ package calculator.controller;
 
 import calculator.util.Parser;
 
+import java.util.Arrays;
+
 import static calculator.validator.Validator.validateNonNegativeInteger;
 
 public class CalculatorController {
@@ -15,11 +17,13 @@ public class CalculatorController {
     public long add(String inputValue) {
         String[] strNumArr = parser.splitInputValue(inputValue);
 
+        if (inputValue.isEmpty()) {
+            return 0L;
+        }
+
         long result = 0L;
         for (String stringNum : strNumArr) {
-            if (stringNum.isEmpty()) {
-                continue;
-            }
+
             validateNonNegativeInteger(stringNum);
             result += Long.parseLong(stringNum);
         }
