@@ -4,10 +4,17 @@ import static calculator.Validator.validateNonNegativeInteger;
 
 public class Calculator {
 
-    public long add(final String[] arr) {
+    Parser parser;
+
+    public Calculator(Parser parser) {
+        this.parser = parser;
+    }
+
+    public long add(String inputValue) {
+        String[] strNumArr = parser.splitStringNum(inputValue);
 
         long result = 0L;
-        for (String stringNum : arr) {
+        for (String stringNum : strNumArr) {
             if (stringNum.isEmpty()) {
                 continue;
             }

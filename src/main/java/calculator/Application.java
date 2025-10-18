@@ -6,10 +6,9 @@ public class Application {
         // TODO: 프로그램 구현
         try {
             String input = InputView.input();
-            String[] stringNumArr = Parser.splitStringNum(input);
 
-            Calculator calc = new Calculator();
-            Long result = calc.add(stringNumArr);
+            Calculator calc = new Calculator(new Parser());
+            Long result = calc.add(input);
 
             OutputView.print(result);
         } catch (IllegalArgumentException e) {
