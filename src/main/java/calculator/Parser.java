@@ -5,9 +5,9 @@ import java.util.Set;
 public class Parser {
 
     private static final String CUSTOM_REGEX_PATTERN = "^//(.)\\\\n";
-    private static final Delimiter delimiter = new Delimiter();
+    private final Delimiter delimiter = new Delimiter();
 
-    public static String[] splitStringNum(final String inputValue) {
+    public String[] splitStringNum(final String inputValue) {
         Set<String> delimiters = delimiter.getDelimiter(inputValue);
 
         String copyInputValue = inputValue;
