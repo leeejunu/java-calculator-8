@@ -13,7 +13,7 @@ public class CalculatorController {
     }
 
     public long add(String inputValue) {
-        String[] strNumArr = parser.splitStringNum(inputValue);
+        String[] strNumArr = parser.splitInputValue(inputValue);
 
         long result = 0L;
         for (String stringNum : strNumArr) {

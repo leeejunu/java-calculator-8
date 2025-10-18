@@ -9,7 +9,7 @@ public class Parser {
     private static final String CUSTOM_REGEX_PATTERN = "^//(.)\\\\n";
     private final Delimiter delimiter = new Delimiter();
 
-    public String[] splitStringNum(final String inputValue) {
+    public String[] splitInputValue(final String inputValue) {
         Set<String> delimiters = delimiter.getDelimiter(inputValue);
 
         String copyInputValue = inputValue;
