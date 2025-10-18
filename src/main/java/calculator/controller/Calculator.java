@@ -1,6 +1,8 @@
-package calculator;
+package calculator.controller;
 
-import static calculator.Validator.validateNonNegativeInteger;
+import calculator.util.Parser;
+
+import static calculator.validator.Validator.validateNonNegativeInteger;
 
 public class Calculator {
 

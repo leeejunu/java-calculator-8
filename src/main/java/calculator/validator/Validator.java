@@ -1,4 +1,4 @@
-package calculator;
+package calculator.validator;
 
 import java.util.Set;
 import java.util.regex.Pattern;
