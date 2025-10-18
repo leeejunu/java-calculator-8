@@ -2,12 +2,11 @@ package calculator.util;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.regex.Pattern;
 
 import static calculator.validator.Validator.validateCustomDelimiter;
 
 public class Delimiter {
-    private static final Set<String> DEFAULT_DELIMITERS = Set.of(Pattern.quote(":"), Pattern.quote(","));
+    private static final Set<String> DEFAULT_DELIMITERS = Set.of(":", ",");
     private final Set<String> customDelimiters;
 
     public Delimiter() {
@@ -26,7 +25,7 @@ public class Delimiter {
         if (inputValue.startsWith("//")) {
             String customDelimiter = inputValue.substring(2, inputValue.indexOf("\\n"));
             validateCustomDelimiter(customDelimiter);
-            customDelimiters.add(Pattern.quote(customDelimiter));
+            customDelimiters.add(customDelimiter);
         }
     }
 }
