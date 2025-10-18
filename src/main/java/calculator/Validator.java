@@ -20,4 +20,9 @@ public class Validator {
         }
     }
 
+    public static void validateCustomDelimiter(String delimiter) {
+        if (delimiter.length() != 1) {
+            throw new IllegalArgumentException("구분자는 한 글자만 입력할 수 있습니다.");
+        }
+    }
 }

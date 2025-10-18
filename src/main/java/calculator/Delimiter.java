@@ -4,6 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.regex.Pattern;
 
+import static calculator.Validator.validateCustomDelimiter;
+
 public class Delimiter {
     private static final Set<String> DEFAULT_DELIMITERS = Set.of(Pattern.quote(":"), Pattern.quote(","));
     private final Set<String> customDelimiters;
@@ -12,7 +14,7 @@ public class Delimiter {
         customDelimiters = new HashSet<>();
     }
 
-    public Set<String> getDelimiter(final String inputValue) {
+    public Set<String> getDelimiter(String inputValue) {
         if (inputValue.startsWith("//")) {
             setCustomDelimiter(inputValue);
             return customDelimiters;
@@ -20,11 +22,11 @@ public class Delimiter {
         return DEFAULT_DELIMITERS;
     }
 
-    private void setCustomDelimiter(final String inputValue) {
+    private void setCustomDelimiter(String inputValue) {
         if (inputValue.startsWith("//")) {
-            String delimiter = inputValue.substring(2, inputValue.indexOf("\\n"));
-            String customDelimiter = Pattern.quote(delimiter);
-            customDelimiters.add(customDelimiter);
+            String customDelimiter = inputValue.substring(2, inputValue.indexOf("\\n"));
+            validateCustomDelimiter(customDelimiter);
+            customDelimiters.add(Pattern.quote(customDelimiter));
         }
     }
 }
