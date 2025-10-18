@@ -1,6 +1,6 @@
 package calculator;
 
-import calculator.controller.Calculator;
+import calculator.controller.CalculatorController;
 import calculator.util.Parser;
 import calculator.view.InputView;
 import calculator.view.OutputView;
@@ -12,7 +12,7 @@ public class Application {
         try {
             String input = InputView.input();
 
-            Calculator calc = new Calculator(new Parser());
+            CalculatorController calc = new CalculatorController(new Parser());
             Long result = calc.add(input);
 
             OutputView.print(result);

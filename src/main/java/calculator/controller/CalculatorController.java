@@ -4,11 +4,11 @@ import calculator.util.Parser;
 
 import static calculator.validator.Validator.validateNonNegativeInteger;
 
-public class Calculator {
+public class CalculatorController {
 
     Parser parser;
 
-    public Calculator(Parser parser) {
+    public CalculatorController(Parser parser) {
         this.parser = parser;
     }
 
