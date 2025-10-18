@@ -1,10 +1,22 @@
 package calculator;
 
+import java.util.Set;
+import java.util.regex.Pattern;
+
 public class Validator {
 
     public static void validateNonNegativeInteger(String strNum) {
         if (Long.parseLong(strNum) < 0) {
             throw new IllegalArgumentException("음수는 입력하실 수 없습니다.");
+        }
+    }
+
+    public static void validateInput(String inputValue, Set<String> delimiters) {
+        for (char c : inputValue.toCharArray()) {
+            String regex = Pattern.quote(String.valueOf(c));
+            if (!Character.isDigit(c) && !delimiters.contains(regex)) {
+                throw new IllegalArgumentException("구분자 외의 문자를 사용하셨습니다. 잘못된 문자 = " + c);
+            }
         }
     }
 

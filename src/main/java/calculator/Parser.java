@@ -15,6 +15,8 @@ public class Parser {
             copyInputValue = copyInputValue.replaceFirst(CUSTOM_REGEX_PATTERN, "");
         }
 
+        Validator.validateInput(copyInputValue, delimiters);
+
         return copyInputValue.split(String.join("|", delimiters));
     }
 

@@ -8,7 +8,7 @@
 
 ## 예외 처리
 - [X] 음수 입력시 IllegalArgumentException 발생시킨다.
-- [ ] 기본 구분자외에 문자(숫자 제외) 포함시 IllegalArgumentException 발생시킨다.
-- [ ] 커스텀 구분자가 한글자가 아닌 경우 IllegalArgumentException 발생시킨다.
-- [ ] 커스텀 구분자외에 문자(숫자 제외) 포함시 IllegalArgumentException 발생시킨다.
+- [X] 기본 구분자 외의 문자(숫자 제외) 포함시 IllegalArgumentException 발생시킨다.
+- [ ] 커스텀 구분자가 한 글자가 아닌 경우 IllegalArgumentException 발생시킨다.
+- [X] 커스텀 구분자 외의 문자(숫자 제외) 포함시 IllegalArgumentException 발생시킨다.
 - [ ] 커스텀 구분자가 숫자인 경우 IllegalArgumentException 발생시킨다.
